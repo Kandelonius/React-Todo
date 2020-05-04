@@ -1,35 +1,38 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
+
 const menialTasks = [
   {
     task: "Fetch Some Item",
-    id: 101,
+    id: 505,
     endured: false
   },
   {
     task: "Discipline Underling",
-    id: 102,
+    id: 530,
     endured: false
   },
   {
     task: "Watch Door",
-    id: 103,
+    id: 545,
     endured: false
   },
   {
     task: "Watch Prisoner",
-    id: 104,
+    id: 845,
     endured: false
   },
   {
     task: "Grovel",
-    id: 105,
+    id: 1245,
     endured: false
   },
   {
     task: "Take Lashings",
-    id: 106,
+    id: 1315,
     endured: false
   }
 ];
@@ -48,6 +51,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm />
+        <TodoList menialTasks={this.state.menialTasks} />
       </div>
     );
   }
