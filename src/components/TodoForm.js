@@ -11,7 +11,13 @@ class TodoForm extends React.Component {
     }
     render() {
         return (
-            <div></div>
+            <form >
+                <input
+                type="text"
+                name="task"
+                />
+            <button>Add</button>
+            </form>
         );
     }
 }

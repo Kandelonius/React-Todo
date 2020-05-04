@@ -12,7 +12,7 @@ const TodoList = props => {
             {props.menialTasks.map(item => (
                 <Todo key={item.id} item={item} />
             ))}
-
+            <button onClick={props.clearEndured}>Done</button>
         </div>
     );
 }
