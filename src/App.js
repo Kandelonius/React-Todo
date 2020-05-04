@@ -9,7 +9,7 @@ import TodoForm from "./components/TodoForm";
 //All of your handler functions should live here on <App />.
 const menialTasks = [
   {
-    task: "Fetch Some Item",
+    task: "Fetch Firewood",
     id: 505,
     endured: false
   },
@@ -20,7 +20,7 @@ const menialTasks = [
   },
   {
     task: "Watch Door",
-    id: 545,
+    id: 535,
     endured: false
   },
   {
@@ -60,6 +60,8 @@ class App extends React.Component {
       menialTasks: [...this.state.menialTasks, newTask]
     });
   };
+  toggleTask = () => {};
+  clearPurchased = () => {};
   render() {
     return (
       <div>

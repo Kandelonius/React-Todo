@@ -1,8 +1,12 @@
 import React from 'react';
 //<Todo /> is a component that takes in the todo data and displays the task to the screen.
 const Todo = props => {
+    console.log(props.item.endured)
     return (
-        <div><p>{props.item.task}</p></div>
+        <button style={props.item.endured ? {textDecoration: 'line-through'}: null}
+        onClick={() => props.toggleTask}>
+            <p>{props.item.task}</p>
+        </button>
     );
 }
 
