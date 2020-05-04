@@ -3,6 +3,7 @@
 import React from 'react';
 
 import Todo from './Todo';
+//<TodoList /> receives your Todos array and iterates over the list generating a new <Todo /> for each element in the array.
 
 const TodoList = props => {
 
@@ -11,7 +12,7 @@ const TodoList = props => {
             {props.menialTasks.map(item => (
                 <Todo key={item.id} item={item} />
             ))}
-            
+
         </div>
     );
 }
