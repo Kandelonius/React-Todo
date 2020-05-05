@@ -60,14 +60,29 @@ class App extends React.Component {
       menialTasks: [...this.state.menialTasks, newTask]
     });
   };
-  toggleTask = () => {};
-  clearPurchased = () => {};
+  toggleTask = (clickedId) => {
+    const newTaskList = this.state.menialTasks.map((item) => {
+      if (item.id === clickedId) {
+        return {
+          ...item,
+          endured: !item.endured
+        };
+      } else {
+        return item;
+      }
+    });
+    this.setState({
+      menialTasks: newTaskList
+    })
+  };
+  clearPurchased = () => { };
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm addItem={this.addItem}/>
-        <TodoList menialTasks={this.state.menialTasks} />
+        <TodoForm addItem={this.addItem} />
+        <TodoList menialTasks={this.state.menialTasks}
+          handleToggleTask={this.toggleTask} />
       </div>
     );
   }

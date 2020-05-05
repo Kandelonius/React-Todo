@@ -6,11 +6,13 @@ import Todo from './Todo';
 //<TodoList /> receives your Todos array and iterates over the list generating a new <Todo /> for each element in the array.
 
 const TodoList = props => {
-
     return (
         <div>
             {props.menialTasks.map(item => (
-                <Todo key={item.id} item={item} />
+                <Todo key={item.id}
+                item={item}
+                handleToggleTask={props.handleToggleTask}
+                />
             ))}
             <button onClick={props.clearEndured}>Done</button>
         </div>
