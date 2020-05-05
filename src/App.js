@@ -1,9 +1,12 @@
 
 import React from 'react';
 import ReactDOM from "react-dom";
+import styled from 'styled-components'
 
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
+import "./components/Todo.css";
+// import "../public/img/weatheredPaper.jpg";
 //<App /> will hold all the data needed for this project. It will also be the container for your Todo Components.
 //All of your application data will be stored here on <App />.
 //All of your handler functions should live here on <App />.
@@ -39,7 +42,15 @@ const menialTasks = [
     endured: false
   }
 ];
-
+const Container = styled.div`
+text-align: center;
+background-color: green;
+border: 2px solid gray;
+padding 2%;
+  button{
+    background-color: gray;
+  }
+`
 class App extends React.Component {
   constructor() {
     super();
@@ -83,13 +94,13 @@ class App extends React.Component {
    };
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <Container>
+        <h2>Tasks to complete for master!</h2>
         <TodoForm addItem={this.addItem} />
         <TodoList menialTasks={this.state.menialTasks}
           handleToggleTask={this.toggleTask}
           handleClear={this.clearEndured} />
-      </div>
+      </Container>
     );
   }
 }
