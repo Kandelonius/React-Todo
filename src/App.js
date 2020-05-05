@@ -75,14 +75,20 @@ class App extends React.Component {
       menialTasks: newTaskList
     })
   };
-  clearPurchased = () => { };
+  clearEndured = evt => {
+    // console.log(evt)
+    evt.preventDefault();
+    let menialTasks = this.state.menialTasks.filter(menialTasks => !menialTasks.endured);
+    this.setState({ menialTasks });
+   };
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addItem={this.addItem} />
         <TodoList menialTasks={this.state.menialTasks}
-          handleToggleTask={this.toggleTask} />
+          handleToggleTask={this.toggleTask}
+          handleClear={this.clearEndured} />
       </div>
     );
   }

@@ -14,7 +14,7 @@ const TodoList = props => {
                 handleToggleTask={props.handleToggleTask}
                 />
             ))}
-            <button onClick={props.clearEndured}>Done</button>
+            <button onClick={props.handleClear}>Done</button>
         </div>
     );
 }
